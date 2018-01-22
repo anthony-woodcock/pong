@@ -41,18 +41,25 @@
     }
 
     function drawEverything(){
-        canvasContext.fillStyle = 'black'
-        canvasContext.fillRect(0,0, canvas.width, canvas.height)
-        canvasContext.fillStyle = 'white'
-        canvasContext.fillRect(0,210, 10, 100)
-        canvasContext.fillStyle = 'red'
-        canvasContext.fillRect(ballX,100, 10, 10)
+        // next line blanks out the screen with black
+        colourRect(0,0, canvas.width, canvas.height, 'black')
+        // this is left player paddle
+        colourRect(0,210,10,100,'white')
+        // next line draws the balls
+        colourCircle(ballX, 150, 10, 'white')
+    }
+
+    function colourCircle(centerX, centerY, radius, drawColour){
+        canvasContext.fillStyle = drawColour
+        canvasContext.beginPath()
+        canvasContext.arc(centerX, centerY, radius, 0, Math.PI*2, true)
+        canvasContext.fill()
+
     }
 
     function colourRect(leftX,topY, width,height,drawColour){
         canvasContext.fillStyle = drawColour
         canvasContext.fillRect(leftX,topY, width,height)
-
     }
 </script> 
 </body>
