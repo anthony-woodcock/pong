@@ -18,7 +18,7 @@
     var ballX = 50
     var ballY = 50
     var ballSpeedX = 5
-    var ballSpeedY = 4
+    var ballSpeedY = 8
 
     var paddle1Y = 250
     var paddle2Y = 250
@@ -61,9 +61,10 @@
     }
 
     function computerMovement(){
-        if(paddle2Y < ballY){
+        var paddle2YCenter = paddle2Y + (PADDLE_HEIGHT/2)
+        if(paddle2YCenter < ballY -35){
             paddle2Y += 6
-        } else {
+        } else if(paddle2YCenter > ballY+35){
             paddle2Y -= 6
         }
     }
