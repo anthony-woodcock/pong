@@ -132,6 +132,12 @@
         }
     }
 
+    function drawNet(){
+        for(var i =0; i< canvas.height; i+=40){
+            colourRect(canvas.width/2-1,i,2, 20, 'white')
+        }
+    }
+
     function drawEverything(){
         // next line blanks out the screen with black
         colourRect(0,0, canvas.width, canvas.height, 'black')
@@ -146,6 +152,9 @@
             canvasContext.fillText("click to continue", 350, 500)
             return 
         }
+
+        drawNet()
+        
         // this is left player paddle
         colourRect(0,paddle1Y,PADDLE_THICKNESS ,PADDLE_HEIGHT,'white')
         // this is right player paddle
